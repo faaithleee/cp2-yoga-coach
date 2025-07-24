@@ -1,0 +1,84 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Yoga Pose Detection App</title>
+
+    <!-- Load p5.js + ml5.js -->
+    <script src="https://cdn.jsdelivr.net/npm/p5@1.4.0/lib/p5.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.9.0/addons/p5.dom.min.js"></script>
+    <script src="https://unpkg.com/ml5@0.6.0/dist/ml5.min.js"></script> <!-- ✅ Correct ml5 version -->
+
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-image: url("{% static 'assets/new-background.jpg' %}");
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+            font-family: Arial, sans-serif;
+            color: white;
+            text-shadow: 1px 1px 2px black;
+        }
+
+        h1 {
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        h1 span {
+            border: solid 5px rgb(194, 11, 11);
+            padding: 5px 15px;
+            background-color: rgba(255, 255, 255, 0.8);
+            color: black;
+        }
+        #canvas-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 20px;
+        }
+
+        canvas {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+        }
+
+    </style>
+</head>
+<body>
+
+<h1><span>YOGA-POSE DETECTION APP</span></h1>
+
+<!-- Pose Selection -->
+<div style="text-align: center; margin-top: 20px;">
+    <label for="poseSelect">Choose a Pose:</label>
+    <select id="poseSelect">
+        <option value="A">Tadasana</option>
+        <option value="B">Urdhva Hastasana</option>
+        <option value="C">Uttanasana</option>
+        <option value="D">Ardha Uttanasana</option>
+        <option value="E">Chaturanga</option>
+        <option value="F">Urdhva Mukha Svanasana</option>
+        <option value="G">Adho Mukha Svanasana</option>
+    </select>
+    <p id="correctionMessage" style="color: yellow; font-size: 20px; margin-top: 10px;"></p>
+</div>
+
+<!-- Pass in path to trained model -->
+<script>
+    var pred_json = "{% static 'train/trained1.json' %}";
+</script>
+
+<div id="canvas-container"></div>
+
+<!-- PoseNet + KNN Classifier prediction script -->
+<script src="{% static 'pred/pose.js' %}"></script>
+
+
+</body>
+</html>
