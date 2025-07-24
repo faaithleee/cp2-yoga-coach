@@ -1,12 +1,4 @@
-// Copyright (c) 2019 ml5
-//
-// This software is released under the MIT License.
-// https://opensource.org/licenses/MIT
 
-/* ===
-ml5 Example
-KNN Classification on Webcam Images with poseNet. Built with p5.js
-=== */
 let video;
 // Create a KNN classifier
 const knnClassifier = ml5.KNNClassifier();
