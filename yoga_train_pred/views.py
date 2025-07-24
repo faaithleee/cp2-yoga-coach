@@ -8,3 +8,7 @@ def training_view(request):
 
 def prediction_view(request):
     return render(request, "Yoga_prediction/index.html")
+
+def reference_view(request):
+    return render(request, 'Yoga_prediction/reference.html')
+

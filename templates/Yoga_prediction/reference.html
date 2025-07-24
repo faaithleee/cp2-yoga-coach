@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Yoga Pose Reference</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            margin: 0;
+            padding: 20px;
+            text-align: center;
+        }
+
+        h1 {
+            color: #c20b0b;
+            margin-bottom: 30px;
+        }
+
+        .gallery-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .gallery-item {
+            width: 300px;
+            background-color: #fff;
+            border-radius: 10px;
+            padding: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover; /* Ensures all images are the same size and aspect ratio */
+            border-radius: 8px;
+        }
+
+        .gallery-item p {
+            margin-top: 10px;
+            font-weight: bold;
+            color: #333;
+        }
+
+        @media (max-width: 768px) {
+            .gallery-item {
+                width: 45%;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .gallery-item {
+                width: 90%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<h1>Yoga Pose Reference</h1>
+
+<div class="gallery-container">
+    <div class="gallery-item">
+        <img src="{% static 'assets/pose1new.jpg' %}" alt="Tadasana">
+        <p>Tadasana</p>
+    </div>
+    <div class="gallery-item">
+        <img src="{% static 'assets/pose2.jpg' %}" alt="Urdhva Hastasana">
+        <p>Urdhva Hastasana</p>
+    </div>
+    <div class="gallery-item">
+        <img src="{% static 'assets/pose3.jpg' %}" alt="Uttanasana">
+        <p>Uttanasana</p>
+    </div>
+    <div class="gallery-item">
+        <img src="{% static 'assets/pose4.jpg' %}" alt="Ardha Uttanasana">
+        <p>Ardha Uttanasana</p>
+    </div>
+    <div class="gallery-item">
+        <img src="{% static 'assets/pose5new.jpg' %}" alt="Chaturanga">
+        <p>Chaturanga</p>
+    </div>
+    <div class="gallery-item">
+        <img src="{% static 'assets/pose6.jpg' %}" alt="Urdhva Mukha Svanasana">
+        <p>Urdhva Mukha Svanasana</p>
+    </div>
+    <div class="gallery-item">
+        <img src="{% static 'assets/pose7.jpg' %}" alt="Adho Mukha Svanasana">
+        <p>Adho Mukha Svanasana</p>
+    </div>
+</div>
+
+</body>
+</html>

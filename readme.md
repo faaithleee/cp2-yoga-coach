@@ -7,20 +7,6 @@ This project is based on the pose estimation model
 
 
 
-Currently this system gives around 75% accuracy which can be improve by gathering more data and retrain and fine-tune with different classifier model.The uniqueness of the project in data preparation process which is user friendly and can be inference in real-time with browser.i trained the model with 7 (seven) yoga-pose data ('Tadasana','Urdhva Hastasana','Uttanasana','Ardha Uttanasana','Chaturanga','Urdhva Mukha Svanasana','Adho Mukha Svanasana'
-).If you have any query  please contact me via [E-mail](md.sharif.ullah.forhad@gmail.com)
-
-
-## Table of Contents
-- [Basic Theory](#Basic-Theory)
-- [Installation](#installation)
-- [Code Structure](#code-structure)
-- [Data Preparation](#data-preparation)
-- [Training](#training)
-- [Prediction](#prediction)
-- [DataSet](#dataset)
-
-
 
 ## Basic Theory
 
@@ -55,7 +41,8 @@ So,Using PoseNet we get key points of human limbs. Output of keypoints is (x,y) 
 
 
 ## Data Preparation
-
+Data Preparation
+Yoga pose images are resized using resize.py and compiled into a video at 1 FPS using video.py.
 
 I collected yoga pose images from various sources (Flickrs,Youtube videos etc),Resize the images using ```resize.py``` . Considering these images as frame made a video using ```video.py``` by setting FPS=1.
 ## DataSet
@@ -65,15 +52,11 @@ I collected yoga pose images from various sources (Flickrs,Youtube videos etc),R
 
 I prepared the training procedure using UI. By clicking the button we can select current frame considering this as level. Open ```index.html``` in editor from training folder, some thing will apear like below
 
-![Figure](https://github.com/forhadsidhu/Yoga-pose-detection/blob/master/Images/train.PNG)
-
-
-## Prediction
-
-open ```index.html``` file from prediction folder. it will open webcam and start predicting!
-
-![Figure](https://github.com/forhadsidhu/Yoga-pose-detection/blob/master/Images/pred.PNG)
 
 
 
-# :smile: Happy ~~Coding~~ Contributing :two_hearts::two_hearts::two_hearts::two_hearts::two_hearts::two_hearts::two_hearts:
+Training and Prediction 
+Training: Managed through the UI in the Yoga_training/index.html file.
+
+Prediction: Open index.html from the Yoga_prediction folder for real-time pose detection.
+
